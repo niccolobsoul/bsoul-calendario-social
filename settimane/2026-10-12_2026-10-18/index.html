@@ -2,51 +2,90 @@
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Pacchetto social bSoul · da lunedì 12 a domenica 18 ottobre</title>
+<title>Pacchetto Social bSoul · da lunedì 12 a domenica 18 ottobre</title>
 <style>
-:root{--bg:#F7F4EF;--carta:#fff;--fg:#3F3732;--mut:#6F625A;--linea:#E3DDD3;--lime:#C2D501;--lime-scuro:#7E8A00;--reel:#2F6B4F;--storia:#8A5A00;--post:#1F4E79;--att:#A33A1D}
+/* Stile del Sentiero (pagina approvata: schema_sistema_contenuti_2026-08-23.html) con i colori del Brand Book bSoul:
+   fondo con griglia leggera, pannelli, etichette mono, un solo accento (marrone); verde, sabbia e ruggine solo per lo stato.
+   Il tema segue quello del dispositivo (chiaro o scuro). */
+:root{
+  --bg:#0a0b0d;--surface:#121317;--surface-2:#17181d;--fg:#ececef;--muted:#8b909a;--faint:#5d626c;--line:#24262c;--grid:rgba(255,255,255,.035);
+  --accent:#ebb284;--accent-soft:rgba(235,178,132,.14);--on-accent:#0a0b0d;
+  --ok:#bcc482;--ok-soft:rgba(188,196,130,.12);--warn:#a68a64;--warn-soft:rgba(166,138,100,.14);--bad:#dc7623;--bad-soft:rgba(220,118,35,.12);
+  --sans:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;--mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  color-scheme:dark}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#f7f7f8;--surface:#ffffff;--surface-2:#f3f3f5;--fg:#16171a;--muted:#5e636d;--faint:#9a9ea7;--line:#e3e4e8;--grid:rgba(0,0,0,.04);
+  --accent:#582f0e;--accent-soft:rgba(88,47,14,.09);--on-accent:#ffffff;
+  --ok:#656d4a;--ok-soft:rgba(101,109,74,.09);--warn:#816137;--warn-soft:rgba(166,138,100,.12);--bad:#9a5218;--bad-soft:rgba(154,82,24,.08);
+  color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#f7f7f8;--surface:#ffffff;--surface-2:#f3f3f5;--fg:#16171a;--muted:#5e636d;--faint:#9a9ea7;--line:#e3e4e8;--grid:rgba(0,0,0,.04);
+  --accent:#582f0e;--accent-soft:rgba(88,47,14,.09);--on-accent:#ffffff;
+  --ok:#656d4a;--ok-soft:rgba(101,109,74,.09);--warn:#816137;--warn-soft:rgba(166,138,100,.12);--bad:#9a5218;--bad-soft:rgba(154,82,24,.08);
+  color-scheme:light}
 *{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes beat{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%,100%{box-shadow:0 0 0 8px transparent}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
-header,main{max-width:980px;margin:0 auto;padding:0 16px}
-header{padding-top:26px}
-h1{font-size:26px;line-height:1.2;margin:0 0 6px}
-.sotto{color:var(--mut);margin:0 0 14px}
-nav{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--linea);z-index:2}
-nav a{text-decoration:none;color:var(--fg);background:var(--carta);border:1px solid var(--linea);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px}
-h2{font-size:20px;margin:30px 0 12px;padding-bottom:6px;border-bottom:3px solid var(--lime)}
-.sapere{background:var(--carta);border:1px solid var(--linea);border-radius:12px;padding:4px 18px 12px;margin-top:18px}
-.sapere h2{border:0;margin:14px 0 4px;font-size:17px}
-.sapere ul{margin:0;padding-left:20px}
-.sapere li{margin:6px 0}
-.scheda{display:grid;grid-template-columns:250px 1fr;gap:18px;background:var(--carta);border:1px solid var(--linea);border-radius:12px;padding:16px;margin:0 0 16px}
-.vista video{width:100%;border-radius:8px;display:block;background:#1d1d1b;aspect-ratio:9/16;object-fit:cover}
-.vista img{width:100%;height:auto;border-radius:8px;display:block;border:1px solid var(--linea)}
-.vuoto{aspect-ratio:9/16;border:2px dashed var(--linea);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mut);padding:16px;font-size:14px}
-.scarica{display:block;text-align:center;margin-top:8px;font-size:14px;font-weight:600;color:var(--fg);border:1px solid var(--linea);border-radius:8px;padding:7px;text-decoration:none}
-.testa{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;font-weight:700}
-.tipo{color:#fff;border-radius:6px;padding:2px 9px;letter-spacing:.03em;text-transform:uppercase}
-.reel .tipo{background:var(--reel)} .storia .tipo{background:var(--storia)} .post .tipo{background:var(--post)}
-.ora{border:1px solid var(--linea);border-radius:6px;padding:2px 9px}
-.stato{border-radius:6px;padding:2px 9px}
-.stato.ok{color:var(--lime-scuro);border:1px solid var(--lime-scuro)}
-.stato.prop{color:var(--storia);border:1px dashed var(--storia)}
-.stato.att{color:#fff;background:var(--att)}
-h3{font-size:18px;line-height:1.3;margin:10px 0 4px}
-.cosa{margin:0 0 10px;color:var(--mut)}
-.testo{margin:12px 0}
-.riga{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:4px}
-.et{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
-button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;background:var(--lime);color:#2c2a00;border:0;border-radius:8px;padding:6px 16px}
-button.fatto{background:var(--fg);color:#fff}
-pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font:inherit;background:var(--bg);border:1px solid var(--linea);border-radius:8px;padding:12px 14px}
-.note{margin:12px 0 0;padding:10px 14px 10px 32px;background:#FBF6E6;border:1px solid #E9DDB5;border-radius:8px;font-size:15px;overflow-wrap:anywhere}
+header,main{max-width:1080px;margin:0 auto;padding:0 16px}
+header{padding-top:28px}
+h1{font-size:1.9rem;line-height:1.12;font-weight:600;letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance}
+.sotto{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;padding:10px 0;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 10px;transition:color .15s,border-color .15s}
+nav a:hover{color:var(--fg);border-color:var(--faint)}
+nav a.oggi{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+h2{font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.giorno{scroll-margin-top:64px}
+.giorno.oggi h2::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none;animation:beat 2.4s ease-out infinite}
+.sapere{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px;margin-top:20px}
+.sapere h2{border:0;margin:0 0 8px;padding:0;font-size:1.05rem}
+.sapere ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.sapere li::marker{color:var(--accent)}
+.scheda{display:grid;grid-template-columns:230px 1fr;gap:20px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 14px;min-width:0;transition:border-color .15s}
+.scheda:hover{border-color:var(--faint)}
+.corpo{min-width:0}
+.vista video{width:100%;display:block;border-radius:8px;background:#000;aspect-ratio:9/16;object-fit:cover;border:1px solid var(--line)}
+.vista img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+.vuoto{aspect-ratio:9/16;border:1px dashed var(--faint);border-radius:8px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:16px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.scarica{display:block;text-align:center;margin-top:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:7px;text-decoration:none;transition:color .15s,border-color .15s}
+.scarica:hover{color:var(--fg);border-color:var(--faint)}
+.testa{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tipo,.ora,.stato{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;padding:2px 8px;border:1px solid var(--line);white-space:nowrap}
+.tipo{color:var(--accent);background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.reel .tipo{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.post .tipo{background:transparent}
+.ora{color:var(--fg);background:var(--surface-2)}
+.stato{display:inline-flex;align-items:center;gap:6px}
+.stato::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.stato.ok{color:var(--ok);background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
+.stato.prop{color:var(--warn);background:var(--warn-soft);border-style:dashed;border-color:var(--warn)}
+.stato.att{color:var(--bad);background:var(--bad-soft);border-color:color-mix(in srgb,var(--bad) 45%,transparent)}
+h3{font-size:1.1rem;line-height:1.3;font-weight:600;letter-spacing:-.01em;margin:12px 0 4px}
+.cosa{margin:0 0 10px;color:var(--muted);font-size:.92rem}
+.testo{margin:14px 0}
+.riga{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.et{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+button{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;cursor:pointer;background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);border-radius:6px;padding:6px 14px;transition:opacity .15s,background .15s}
+button:hover{opacity:.88}
+button.fatto{background:var(--ok);border-color:var(--ok);color:var(--on-accent)}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;font-family:var(--sans);font-size:.95rem;line-height:1.55;color:var(--fg);background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.note{margin:12px 0 0;padding:10px 14px 10px 30px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);border-radius:8px;font-size:.9rem;overflow-wrap:anywhere}
 .note li{margin:4px 0;overflow-wrap:anywhere}
-.fonte{margin:10px 0 0;font-size:13px;color:var(--mut)}
-footer{max-width:980px;margin:30px auto;padding:0 16px 40px;color:var(--mut);font-size:13px}
-@media (max-width:700px){.scheda{grid-template-columns:1fr} .vista{max-width:260px} .vuoto{aspect-ratio:auto;min-height:110px}}
+.note li::marker{color:var(--warn)}
+.fonte{margin:10px 0 0;font-family:var(--mono);font-size:.7rem;letter-spacing:.02em;color:var(--muted)}
+footer{max-width:1080px;margin:30px auto 0;padding:14px 16px 48px;color:var(--muted);font-size:.84rem}
+.anim header,.anim .sapere,.anim .scheda{animation:in .3s ease-out both;animation-delay:calc(var(--i,0) * 40ms)}
+@media (max-width:700px){.scheda{grid-template-columns:1fr}.vista{max-width:260px}.vuoto{aspect-ratio:auto;min-height:110px}h1{font-size:1.5rem}.giorno{scroll-margin-top:96px}}
+
+/* titolo al centro (regola di Nic 14/10) */
+body>header{text-align:center}
 </style></head><body>
-<header><h1>Pacchetto social bSoul · da lunedì 12 a domenica 18 ottobre</h1><p class="sotto">Preparato il 14 ottobre 2026 alle 18:25</p></header>
+<header><h1>Pacchetto Social bSoul · da lunedì 12 a domenica 18 ottobre</h1><p class="sotto">Preparato il 15 ottobre 2026 alle 07:55</p></header>
 <main><nav><a href="#g2026-10-12">Lun 12</a><a href="#g2026-10-13">Mar 13</a><a href="#g2026-10-14">Mer 14</a><a href="#g2026-10-15">Gio 15</a><a href="#g2026-10-16">Ven 16</a><a href="#g2026-10-17">Sab 17</a><a href="#g2026-10-18">Dom 18</a></nav><section class="sapere"><h2>Da sapere prima di programmare</h2><ul><li>Le ore sono una proposta: si possono spostare.</li><li>Nelle storie fatte con una grafica, l&#x27;adesivo del link va messo a mano nella fascia vuota in basso.</li><li>Niente esce senza il sì di Nic e Alberto.</li></ul></section><section class="giorno" id="g2026-10-12"><h2>Lunedì 12 ottobre</h2><article class="scheda reel"><div class="vista"><video controls preload="none" playsinline poster="media/2026-10-12_reel_presenta_video.jpg" src="media/2026-10-12_reel_presenta_video.mp4"></video><a class="scarica" href="media/2026-10-12_reel_presenta_video.mp4" download>Scarica il file</a></div><div class="corpo"><div class="testa"><span class="tipo">Reel</span><span class="ora">ore 13:00</span><span class="stato ok">Pronto</span></div><h3>Reel del giorno: la clip del video che esce oggi</h3><p class="cosa">La clip verticale montata da Suyen, con i sottotitoli, pubblicata come un reel a sé.</p><div class="testo"><div class="riga"><span class="et">Didascalia</span><button type="button" data-copia="c1-t0">Copia</button></div><pre id="c1-t0">Rughe della marionetta e ovale: ti mostro tre strategie naturali.
 
 Non conta la forza, conta isolare il movimento: finché il resto del viso fa versi, la tensione muscolare non si allenta.
@@ -68,7 +107,7 @@ Se è anche la tua ricerca, e non sai da dove partire: richiedi la consulenza gr
 
 Martina
 
-#cosmeticinaturali #pellematura #proaging</pre></div><p class="fonte">Da dove viene: Recensione su Trustpilot · 12 ottobre 2026 · Cecilia S.</p></div></article><article class="scheda storia"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 18:30</span><span class="stato att">In attesa</span></div><h3>Storia: dal blog</h3><ul class="note"><li>il sito non si legge (protezione Cloudflare): serve la modifica di Nic</li></ul><p class="fonte">Da dove viene: blog bSoul</p></div></article></section><section class="giorno" id="g2026-10-15"><h2>Giovedì 15 ottobre</h2><article class="scheda reel"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Reel</span><span class="ora">ore 13:00</span><span class="stato att">In attesa</span></div><h3>Reel del giorno: la clip del video che esce oggi</h3><ul class="note"><li>Il trailer di Suyen non è ancora su Drive (si aspetta un file &quot;Mpas 151026 Trailer&quot; nella cartella «Trailer» di Drive). Appena c&#x27;è, il giro lo prende da solo.</li></ul><p class="fonte">Da dove viene: cartella «Trailer» di Drive</p></div></article><article class="scheda storia"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 18:15</span><span class="stato att">In attesa</span></div><h3>Storia: il reel del giorno ricondiviso, con il link al video</h3><ul class="note"><li>Il trailer di Suyen non è ancora su Drive (si aspetta un file &quot;Mpas 151026 Trailer&quot; nella cartella «Trailer» di Drive). Appena c&#x27;è, il giro lo prende da solo.</li></ul><p class="fonte">Da dove viene: cartella «Trailer» di Drive</p></div></article></section><section class="giorno" id="g2026-10-16"><h2>Venerdì 16 ottobre</h2><article class="scheda reel"><div class="vista"><video controls preload="none" playsinline poster="media/2026-10-16_reel_della_settimana.jpg" src="media/2026-10-16_reel_della_settimana.mp4"></video><a class="scarica" href="media/2026-10-16_reel_della_settimana.mp4" download>Scarica il file</a></div><div class="corpo"><div class="testa"><span class="tipo">Reel</span><span class="ora">ore 13:00</span><span class="stato ok">Pronto</span></div><h3>Reel dai video della settimana</h3><p class="cosa">Il corto «Non si fanno miracoli: la pelle fa uno strato al mese» della macchina video.</p><div class="testo"><div class="riga"><span class="et">Didascalia</span><button type="button" data-copia="c10-t0">Copia</button></div><pre id="c10-t0">La pelle migliora, ma certe rughe sono ancora lì?
+#cosmeticinaturali #pellematura #proaging</pre></div><p class="fonte">Da dove viene: Recensione su Trustpilot · 12 ottobre 2026 · Cecilia S.</p></div></article><article class="scheda storia"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 18:30</span><span class="stato att">In attesa</span></div><h3>Storia: dal blog</h3><ul class="note"><li>giorno passato: non rifatto</li><li>il sito non si legge (protezione Cloudflare): serve la modifica di Nic</li></ul><p class="fonte">Da dove viene: blog bSoul</p></div></article></section><section class="giorno" id="g2026-10-15"><h2>Giovedì 15 ottobre</h2><article class="scheda reel"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Reel</span><span class="ora">ore 13:00</span><span class="stato att">In attesa</span></div><h3>Reel del giorno: la clip del video che esce oggi</h3><ul class="note"><li>Il trailer di Suyen non è ancora su Drive (si aspetta un file &quot;Mpas 151026 Trailer&quot; nella cartella «Trailer» di Drive). Appena c&#x27;è, il giro lo prende da solo.</li></ul><p class="fonte">Da dove viene: cartella «Trailer» di Drive</p></div></article><article class="scheda storia"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 18:15</span><span class="stato att">In attesa</span></div><h3>Storia: il reel del giorno ricondiviso, con il link al video</h3><ul class="note"><li>Il trailer di Suyen non è ancora su Drive (si aspetta un file &quot;Mpas 151026 Trailer&quot; nella cartella «Trailer» di Drive). Appena c&#x27;è, il giro lo prende da solo.</li></ul><p class="fonte">Da dove viene: cartella «Trailer» di Drive</p></div></article></section><section class="giorno" id="g2026-10-16"><h2>Venerdì 16 ottobre</h2><article class="scheda reel"><div class="vista"><video controls preload="none" playsinline poster="media/2026-10-16_reel_della_settimana.jpg" src="media/2026-10-16_reel_della_settimana.mp4"></video><a class="scarica" href="media/2026-10-16_reel_della_settimana.mp4" download>Scarica il file</a></div><div class="corpo"><div class="testa"><span class="tipo">Reel</span><span class="ora">ore 13:00</span><span class="stato ok">Pronto</span></div><h3>Reel dai video della settimana</h3><p class="cosa">Il corto «Non si fanno miracoli: la pelle fa uno strato al mese» della macchina video.</p><div class="testo"><div class="riga"><span class="et">Didascalia</span><button type="button" data-copia="c10-t0">Copia</button></div><pre id="c10-t0">La pelle migliora, ma certe rughe sono ancora lì?
 
 Me l&#x27;ha scritto una cliente. La pelle rinnova uno strato al mese, e dopo la menopausa più piano: alcune cose migliorano prima, altre hanno una causa da cercare.
 
@@ -86,7 +125,7 @@ Me l&#x27;ha scritto una signora: voleva rassodare, e sentiva la perdita dell&#x
 
 Qui le rispondo: quel pezzettino non si tratta da solo, e sono pochi minuti al giorno 💚
 
-#pellematura #proaging</pre></div><p class="fonte">Da dove viene: macchina video, video nuovo, girato «Rec 301026 Girato_parte1di2_pulito AI.mp4», corto «Sei minuti di drenaggio la mattina: l&#x27;ordine che le ho dato»</p></div></article><article class="scheda storia"><div class="vista"><div class="vuoto">Il file non c'è ancora</div></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 12:30</span><span class="stato att">In attesa</span></div><h3>Storia: una recensione</h3><ul class="note"><li>nessuna recensione a 5 stelle adatta e mai usata negli ultimi 45 giorni</li></ul><p class="fonte">Da dove viene: recensioni</p></div></article></section></main>
+#pellematura #proaging</pre></div><p class="fonte">Da dove viene: macchina video, video nuovo, girato «Rec 301026 Girato_parte1di2_pulito AI.mp4», corto «Sei minuti di drenaggio la mattina: l&#x27;ordine che le ho dato»</p></div></article><article class="scheda storia"><div class="vista"><a href="media/2026-10-18_storia_recensione.png" target="_blank"><img loading="lazy" src="media/2026-10-18_storia_recensione.png" alt=""></a><a class="scarica" href="media/2026-10-18_storia_recensione.png" download>Scarica il file</a></div><div class="corpo"><div class="testa"><span class="tipo">Storia</span><span class="ora">ore 12:30</span><span class="stato ok">Pronto</span></div><h3>Storia: una recensione</h3><p class="cosa">Le parole di Anna El B..</p><p class="fonte">Da dove viene: Recensione su Trustpilot · 15 ottobre 2026 · Anna El B.</p></div></article></section></main>
 <footer>Pagina preparata dal Calendario social di bSoul sul Mac di Nic. Il programma non pubblica niente.</footer>
 <script>
 document.querySelectorAll('button[data-copia]').forEach(function(b){
@@ -97,5 +136,16 @@ document.querySelectorAll('button[data-copia]').forEach(function(b){
     else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();fatto()}
   });
 });
+</script>
+<script>
+/* stile Sentiero: il giorno di oggi ha il pallino verde che pulsa; i pannelli entrano uno dopo l'altro (solo se le animazioni sono permesse) */
+(function(){
+  var d=new Date(),iso=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+  var s=document.getElementById('g'+iso);
+  if(s){s.classList.add('oggi');var a=document.querySelector('nav a[href="#g'+iso+'"]');if(a)a.classList.add('oggi');}
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.querySelectorAll('header,.sapere,.scheda').forEach(function(p,i){p.style.setProperty('--i',Math.min(i,12));});
+  document.documentElement.classList.add('anim');
+})();
 </script>
 </body></html>
